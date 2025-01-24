@@ -4,18 +4,18 @@ import { Box, List, ListItem, ListItemText, Button, Typography } from "@mui/mate
 const SideBar = ({ chats, onNewChat, onSelectChat, activeChat }) => {
   return (
     <Box
-      width="300px" // Fixed width
-      p={2}
-      display="flex"
-      flexDirection="column"
-      justifyContent="space-between"
-      sx={{
-        bgcolor: "background.paper",
-        color: "text.primary",
-        height: "100vh",
-        overflowY: "auto", // Add scrolling for long lists
-        flexShrink: 0, // Prevent resizing
-      }}
+        width="300px" 
+        p={2}
+        display="flex"
+        flexDirection="column"
+        justifyContent="space-between"
+        sx={{
+          bgcolor: "background.paper",
+          color: "text.primary",
+          height: "100vh",
+          overflowY: "auto", 
+          flexShrink: 0,
+        }}
     >
       <div>
         <Typography variant="h5" gutterBottom>
@@ -24,17 +24,17 @@ const SideBar = ({ chats, onNewChat, onSelectChat, activeChat }) => {
         <List>
           {chats.map((chat) => (
             <ListItem
-              key={chat.id}
-              button
-              selected={chat.id === activeChat}
-              onClick={() => onSelectChat(chat.id)}
-              sx={{
-                bgcolor: chat.id === activeChat ? "#333" : "transparent",
-                borderRadius: "8px",
-                "&:hover": { bgcolor: "#444" },
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                whiteSpace: "nowrap",
+                key={chat.id}
+                button
+                selected={chat.id === activeChat}
+                onClick={() => onSelectChat(chat.id)}
+                sx={{
+                  bgcolor: chat.id === activeChat ? "#333" : "transparent",
+                  borderRadius: "8px",
+                  "&:hover": { bgcolor: "#444" },
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
               }}
             >
               <ListItemText primary={chat.name} />

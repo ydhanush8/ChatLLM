@@ -43,13 +43,13 @@ const ChatWindow = ({ activeChat, updateChat }) => {
 
   const addTypingEffect = async (botMessage, updatedMessages) => {
     let currentText = "";
-    for (let i = 0; i < botMessage.text.length; i++) {
-      await new Promise((resolve) => setTimeout(resolve, 10)); // Delay for typing effect
-      currentText += botMessage.text[i];
-      updateChat([
-        ...updatedMessages,
-        { sender: "Gemini", text: currentText }, // Show intermediate state
-      ]);
+      for (let i = 0; i < botMessage.text.length; i++) {
+        await new Promise((resolve) => setTimeout(resolve, 10)); 
+        currentText += botMessage.text[i];
+        updateChat([
+          ...updatedMessages,
+          { sender: "Gemini", text: currentText },
+        ]);
     }
   };
 
